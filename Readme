@@ -1,29 +1,16 @@
-Here is concise documentation of class(Personalaccount)
-transaction types:
-There are two kinds of transactions you can make:
-deposit: Adding money to your account.
-withdrawal: Taking money out of your account.
-The PersonalAccount Class:
-
+Personal Account Class Overview:
+Purpose: This class helps to deal with the accounts of the user and considers transactions such as deposits and withdrawals.
 Attributes:
-
-Balance: This shows how much money you currently have in your account.
-Account Holder: The name of the person who owns the account.
-Account Number: A unique number to identify your account.
-Transactions: A list that records every deposit and withdrawal you make.
-Inner Class: Amount
-
-This represents a single transaction, storing both the amount of money involved and whether it was a deposit or a withdrawal.
-Constructor:
-
-When you create a new account, it sets up your name and account number, starts your balance at zero, and prepares a list for your transactions.
-Methods (What You Can Do):
-
-Deposit Money: You can add money to your account, as long as the amount is positive.
-Withdraw Money: You can take out money, but only if you have enough in your balance.
-Check Balance: You can see how much money you have at any time.
-View Account Info: You can get your account holder’s name and account number.
-Transaction History: You can print out a list of all your deposits and withdrawals.
-How It Works:
-
-Example: You set up an account for "Jones." You deposit 500, withdraw 200, and then try to withdraw 600 (which doesn’t work since you only have 300 left). At the end, it prints out what you did and shows your balance.
+Balance: The amount of money currently held within the account.
+Account Holder: The name of the legal benefactor of the account.
+Account Number: A number which shows that this particular account is different from all others in the bank.
+Transactions: Some statistics about making deposits and withdrawals within the account.
+Inner Class:
+Amount: Refers to the amount put into the bank for saving or the amount withdrawn from the bank for spending.
+Constructor: Sets the name of the account owner{s}, account number, the balance of the account during the creation of the account, and the transaction table which is empty at this particular moment.
+Methods:
+Deposit Money: To make a credit deposit into a given account.
+Withdraw Money: To take funds out of a deposit account and cancel it so long as there is an existing balance on the account.
+Check Balance: Allow a customer to know what his / her balances rather than guess.
+View Account Info: Display details regarding the account holder and the account number.
+Transaction History: Make available a file of all other transactions that have been done in the past with respect to time.
