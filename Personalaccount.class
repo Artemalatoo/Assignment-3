@@ -1,42 +1,52 @@
 import java.util.*;
+
 public class PersonalAccount {
     private double balance;
     private String accountHolder;
     private int accountNumber;
     private List<Amount> transactions;
+
     public PersonalAccount(String accountHolder, int accountNumber) {
         this.balance = 0.0;
         this.accountHolder = accountHolder;
         this.accountNumber = accountNumber;
         this.transactions = new ArrayList<>();
     }
+
     public void deposit(double amount) {
-        if (amount > 0) {
-            transactions.add(new Amount(amount, TransactionType.DEPOSIT));
-            balance += amount;
-        } else {
+        if (amount <= 0) {
             System.out.println("Deposit must be positive.");
+            return;
         }
+        transactions.add(new Amount(amount, TransactionType.DEPOSIT));
+        balance += amount;
     }
+
     public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            transactions.add(new Amount(amount, TransactionType.WITHDRAWAL));
-            balance -= amount;
-        } else if (amount > balance) {
-            System.out.println("Not enough balance.");
-        } else {
+        if (amount <= 0) {
             System.out.println("Withdrawal must be positive.");
+            return;
         }
+        if (amount > balance) {
+            System.out.println("Not enough balance.");
+            return;
+        }
+        transactions.add(new Amount(amount, TransactionType.WITHDRAWAL));
+        balance -= amount;
     }
+
     public double getBalance() {
         return balance;
     }
+
     public int getAccountNumber() {
         return accountNumber;
     }
+
     public String getAccountHolder() {
         return accountHolder;
     }
+
     public void printTransactionHistory() {
         System.out.println("Transaction History for " + accountHolder + " (Account Number: " + accountNumber + "):");
         for (Amount transaction : transactions) {
