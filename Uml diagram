@@ -31,3 +31,5 @@
                     | + getTransactionType(): TransactionType                               |
                     +--------------------+
 
+plus means that attributes and methods are accessible(public)
+minus means that modifier is private
