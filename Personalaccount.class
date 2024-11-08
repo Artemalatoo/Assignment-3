@@ -12,7 +12,7 @@ public class PersonalAccount {
     }
     public void deposit(double amount) {
         if (amount <= 0) {
-            System.out.println("Deposit must be positive.");
+            System.out.println("must be positive");
             return;
         }
         transactions.add(new Amount(amount, TransactionType.DEPOSIT));
@@ -20,11 +20,11 @@ public class PersonalAccount {
     }
     public void withdraw(double amount) {
         if (amount <= 0) {
-            System.out.println("Withdrawal must be positive.");
+            System.out.println("must be positive");
             return;
         }
         if (amount > balance) {
-            System.out.println("Not enough balance.");
+            System.out.println("Not enough");
             return;
         }
         transactions.add(new Amount(amount, TransactionType.WITHDRAWAL));
